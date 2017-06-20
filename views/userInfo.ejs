@@ -1,0 +1,19 @@
+<%- include('layout/header') %>
+<h1>اطلاعات کاربر</h1>
+<ul>
+    <% if(loggedIn) { %>
+    <ul>
+        <li><b>نام کاربری: </b> <%- user.preferred_username %></li>
+        <li><b>ایمیل: </b> <%- user.email %></li>
+        <li><b>شماره موبایل: </b> <%- user.phone_number %></li>
+    </ul>
+    <p><a href="<%- url('') %>">بازگشت</a></p>
+    <% } else {
+    %>
+    <p>صفحه محافظت شده</p>
+    <a href='<%- url('login') %>'>برای دیدن محتوی باید وارد شوید</a>
+    <%
+    }
+    %>
+</ul>
+<%- include('layout/footer') %>
